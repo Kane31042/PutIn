@@ -26,10 +26,13 @@ public class Read {
                             buf2.position(buf2.position());
                             buf2.put('\n');
                             break;
+                        default:
+                            buf2.put('#');
+                            buf1.position(buf1.position()-1);
+                            break;
                     }
                 }else {
-                    char c1=c;
-                    buf2.put(c1);
+                    buf2.put(c);
                 }
             }
             buf1.clear();//清空接收下一行数据
